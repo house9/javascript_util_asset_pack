@@ -39,7 +39,9 @@ does the following:
 
 == Coming Soon
 
-* configuration object so text in ajaxError can be overridden 
+* configuration object 
+  * text in ajaxError overrides
+  * spinner id override
 
 == Resources
 
