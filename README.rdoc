@@ -1,10 +1,52 @@
 == Rails 3.1 javascript - Util asset pack
 
-== Includes
+== Sets up a window.Util object which includes
 
-* xxxx
+* Spinner, with methods to set spinner next to element or hide the spinner
+* AjaxForm, to ajax enable simple forms
+* jQuery ajaxError global handler, exception data during development and friendly message in production
+
+== Usage
+
+spinner (js version)
+
+    window.Util.spinner.nextTo('#my_button'); 
+    window.Util.spinner.nextTo('#my_button', 3, 4); // selector, top offset, left offset
+    window.Util.spinner.hide();
+    
+ajax form (coffee script version)
+
+    jQuery ->
+        new window.Util.AjaxForm '#my_form', -> 
+            log "my_form submit success callback"
+
+== Install
+
+Update the Gemfile in your rails project, add the following line
+
+    gem 'javascript_util_asset_pack'
+
+Run the generator
+
+    rails generate javascript_util_asset_pack
+    
+does the following:
+
+* Copy spinner.gif to /app/assets/images
+* Update application.html.erb adding javascript create window.Rails.env variable
+* Update application.html.erb adding image_tag for spinner.gif
+* Update application.js adding util_pack
+
+== Coming Soon
+
+* configuration object so text in ajaxError can be overridden 
 
 == Resources
 
-* spinner.gif generated using http://www.ajaxload.info/
+* spinner.gif generated using http://www.ajaxload.info
+
+== License
+
+The Unlicense (aka: public domain)
+http://unlicense.org
 

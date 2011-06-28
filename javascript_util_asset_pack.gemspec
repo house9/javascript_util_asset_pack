@@ -16,7 +16,8 @@ Gem::Specification.new do |s|
   s.rubyforge_project = "javascript_util_asset_pack"
   
   s.add_dependency 'rails', '~> 3.1.0.rc'  
-
+  s.add_dependency 'javascript_safe_logger', '~> 0.0.3'  
+  
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }

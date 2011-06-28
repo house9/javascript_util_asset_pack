@@ -5,7 +5,7 @@ class Spinner
   hide: () ->
     jQuery(@spinnerId).hide()    
 
-  setNextTo: (controlID, topOffset = 0, leftOffset = 14) ->
+  nextTo: (controlID, topOffset = 0, leftOffset = 14) ->
     if controlID?
       $control = jQuery(controlID)
       return null if $control.length is 0
