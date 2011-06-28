@@ -1,20 +1,14 @@
 class AjaxForm
-  constructor: (selector) ->
-    # TODO: success-callback
-    
-    log selector
-
+  constructor: (selector, callback = null) ->
     $(selector).submit (e) ->
       e.preventDefault()
       form = this
-
-      log form
+      success = if callback? then callback else () -> log "no success callback"
 
       $.ajax $(form).attr('action'), 
         type: "POST"
         data: $(form).serialize() 
-        success: ->
-          log "success"
+        success: success
 
 window.Util ?= {}
 window.Util.AjaxForm = AjaxForm
