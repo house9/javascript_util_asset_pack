@@ -1,6 +1,8 @@
-== TODO: Rails 3.1 javascript - Util asset pack
+== Rails 3.1 javascript - Util asset pack
 
+== Includes
 
+* xxxx
 
 == Resources
 

@@ -2,7 +2,7 @@ Description:
     Explain the generator
 
 Example:
-    rails generate javascript_util_asset_pack Thing
+    rails generate javascript_util_asset_pack 
 
     This will create:
         what/will/it/create
