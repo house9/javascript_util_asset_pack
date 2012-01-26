@@ -5,6 +5,12 @@ jQuery(document).ajaxError (event, xhr, settings, exception) ->
   
   if xhr.status is 404
     friendly = "#{friendly}Page not found"
+  else if xhr.status is 422
+    friendly = "Your submission has one or more errors. \n\nPlease correct the following issues: \n"
+    validationErrors = jQuery.parseJSON(xhr.responseText)
+    if jQuery.isArray(validationErrors)
+      friendly = friendly + " - #{error}\n" for error in validationErrors
+    local = friendly + "\n\n"
   else
     friendly = "#{friendly}an exception has occurred\nPlease try again"
 
