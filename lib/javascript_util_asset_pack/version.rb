@@ -1,3 +1,3 @@
 module JavascriptUtilAssetPack
-  VERSION = "0.0.6.rc"
+  VERSION = "0.0.7.rc"
 end
