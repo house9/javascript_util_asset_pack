@@ -5,6 +5,8 @@ jQuery(document).ajaxError (event, xhr, settings, exception) ->
   
   if xhr.status is 404
     friendly = "#{friendly}Page not found"
+  else if xhr.status is 401
+    friendly = "#{friendly}Access Denied"
   else if xhr.status is 422
     friendly = "Your submission has one or more errors. \n\nPlease correct the following issues: \n"
     validationErrors = jQuery.parseJSON(xhr.responseText)
@@ -18,7 +20,7 @@ jQuery(document).ajaxError (event, xhr, settings, exception) ->
 
   if window.Rails?.env is "DEVELOPMENT"
     contentType = xhr.getResponseHeader("content-type")
-    if contentType.indexOf('html') > -1
+    if contentType?.indexOf('html') > -1
       body = "<div>#{xhr.responseText}</div>"      
       fragment = $(body).find "h1"
       local = "#{local} \n#{fragment.text()}"
