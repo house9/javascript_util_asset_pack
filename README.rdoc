@@ -10,14 +10,14 @@
 
 spinner (js version)
 
-    window.Util.spinner.nextTo('#my_button'); 
+    window.Util.spinner.nextTo('#my_button');
     window.Util.spinner.nextTo('#my_button', 3, 4); // selector, top offset, left offset
     window.Util.spinner.hide();
-    
+
 ajax form (coffee script version)
 
     jQuery ->
-        new window.Util.AjaxForm '#my_form', -> 
+        new window.Util.AjaxForm '#my_form', ->
             log "my_form submit success callback"
 
 == Install
@@ -29,7 +29,7 @@ Update the Gemfile in your rails project, add the following line
 Run the generator
 
     rails generate javascript_util_asset_pack
-    
+
 does the following:
 
 * Copy spinner.gif to /app/assets/images
@@ -37,9 +37,13 @@ does the following:
 * Update application.html.erb adding image_tag for spinner.gif
 * Update application.js adding util_pack
 
+== WARNING
+
+* 0.0.10 and 0.0.11 are bad versions, use 0.0.12 or above
+
 == Coming Soon
 
-* configuration object 
+* configuration object
   * text in ajaxError overrides
   * spinner id override
 
