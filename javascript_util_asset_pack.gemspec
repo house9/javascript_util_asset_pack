@@ -15,8 +15,8 @@ Gem::Specification.new do |s|
 
   s.rubyforge_project = "javascript_util_asset_pack"
 
-  s.add_dependency 'rails', '~> 3.1'
-  s.add_dependency 'javascript_safe_logger', '~> 0.0.4'
+  s.add_dependency 'rails', '>= 3.1'
+  s.add_dependency 'javascript_safe_logger', '>= 0.1.0'
 
   s.files         = Dir.glob("{lib,vendor}/**/*") + %w(javascript_util_asset_pack.gemspec README.rdoc)
   s.require_paths = ["lib"]
