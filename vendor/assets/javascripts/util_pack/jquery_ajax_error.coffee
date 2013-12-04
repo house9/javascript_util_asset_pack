@@ -1,5 +1,5 @@
 jQuery(document).ajaxError (event, xhr, settings, exception) ->
-  if exception == "abort"
+  if exception == "abort" or xhr.status is 0
     log "request aborted, ignoring abort."
     return null
 
